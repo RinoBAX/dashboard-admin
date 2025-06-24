@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import * as THREE from 'three';
 
-// --- Helper Functions & Constants ---
 const API_BASE_URL = 'http://localhost:3001/api';
 
 const ICONS = {

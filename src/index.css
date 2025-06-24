@@ -1,6 +1,3 @@
-/* src/index.css */
-
-/* --- Global Styles & Futuristic Theme --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
         :root {
@@ -67,8 +64,6 @@
             height: 100%;
             z-index: 0;
         }
-
-        /* --- Glassmorphism Panel Base Style --- */
         .glass-panel {
             background: var(--glass-bg);
             -webkit-backdrop-filter: blur(12px);
@@ -78,8 +73,6 @@
             box-shadow: 0 8px 32px 0 var(--glass-shadow);
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-        
-        /* --- Utility & Loading --- */
         .loading-overlay {
             display: flex;
             align-items: center;
@@ -100,8 +93,6 @@
             animation: l2 1s infinite linear;
         }
         @keyframes l2 {to{transform: rotate(1turn)}}
-        
-        /* --- Login Page --- */
         .login-page {
             display: flex;
             align-items: center;
@@ -114,7 +105,6 @@
             max-width: 420px;
             padding: 2.5rem;
         }
-        
         .login-header { text-align: center; }
         .login-header h2 { font-size: 2rem; font-weight: 700; text-shadow: 0 0 12px var(--primary-glow); }
         .login-header p { margin-top: 0.5rem; color: var(--text-secondary); }
@@ -125,7 +115,6 @@
             flex-direction: column;
             gap: 1.5rem;
         }
-        
         .input-wrapper { position: relative; }
         
         .form-input {
@@ -138,7 +127,6 @@
             color: var(--text-primary);
             transition: all 0.2s;
         }
-        
         .form-input::placeholder { color: var(--text-secondary); }
         
         .form-input:focus {
@@ -146,7 +134,6 @@
             border-color: var(--primary-accent);
             box-shadow: 0 0 15px var(--primary-glow);
         }
-        
         .password-toggle {
             position: absolute;
             top: 50%;
@@ -166,8 +153,6 @@
             border: 1px solid var(--red-glow);
             border-radius: 12px;
         }
-        
-        /* --- General Button Styles --- */
         .button {
             width: 100%;
             padding: 0.9rem 1.25rem;
@@ -199,7 +184,6 @@
             box-shadow: none;
         }
         
-        /* --- App Layout --- */
         .app-layout { display: flex; height: 100vh; }
         
         .main-content {
@@ -215,7 +199,6 @@
         .page-header h1 { font-size: 2.25rem; font-weight: 700; }
         .page-header p { margin-top: 0.25rem; color: var(--text-secondary); }
 
-        /* --- Sidebar --- */
         .sidebar {
             display: flex;
             flex-direction: column;
@@ -283,7 +266,6 @@
         .logout-button:hover { background: rgba(255, 0, 127, 0.2) !important; color: var(--text-primary) !important; }
         .logout-button:hover svg { color: var(--red-glow) !important; }
 
-        /* --- Dashboard Page & Tables --- */
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
         .stat-card { padding: 1.5rem; }
         .stat-card:hover { transform: translateY(-5px); border-color: var(--primary-accent); }
@@ -310,5 +292,3 @@
         .placeholder-notice { padding: 3rem 1.5rem; margin-top: 1.5rem; text-align: center; }
         .placeholder-notice p { color: var(--text-secondary); }
         .placeholder-notice p:nth-child(2) { margin-top: 0.5rem; font-size: 0.875rem; }
-
-/* ...etc... */
