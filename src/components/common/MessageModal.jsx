@@ -5,17 +5,24 @@ const SuccessIcon = () => (
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
 );
+
 const ErrorIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-c-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
 );
+
 const CloseIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
     </svg>
 );
+
 const MessageModal = ({ message, onClose }) => {
+    if (!message) {
+        return null;
+    }
+
     const isError = message.type === 'error';
 
     return (
