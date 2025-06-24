@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --c-navy: #0a192f;
+    --c-light-navy: #172a46;
+    --c-lightest-navy: #303c55;
+    --c-slate: #8892b0;
+    --c-light-slate: #a8b2d1;
+    --c-lightest-slate: #ccd6f6;
+    --c-white: #e6f1ff;
+    --c-chocolate: #d97706; 
+    --c-chocolate-dark: #b45309;
+    --c-green: #34d399;
+    --c-red: #f87171;
+    --font-sans: 'Rajdhani', sans-serif;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--c-navy);
+    color: var(--c-light-slate);
+}
+
+.glassmorphism {
+    background: rgba(23, 42, 70, 0.5); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(48, 60, 85, 0.5); 
+}
+
+.futuristic-btn {
+    background-color: transparent;
+    border: 1px solid var(--c-chocolate);
+    color: var(--c-chocolate);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.futuristic-btn:hover {
+    background-color: var(--c-chocolate);
+    color: var(--c-navy);
+    box-shadow: 0 0 15px var(--c-chocolate);
+}
+
+.futuristic-btn.approve { border-color: var(--c-green); color: var(--c-green); }
+.futuristic-btn.approve:hover { background-color: var(--c-green); color: var(--c-navy); box-shadow: 0 0 15px var(--c-green); }
+.futuristic-btn.reject { border-color: var(--c-red); color: var(--c-red); }
+.futuristic-btn.reject:hover { background-color: var(--c-red); color: var(--c-navy); box-shadow: 0 0 15px var(--c-red); }
+
+
+.futuristic-input {
+    background-color: rgba(10, 25, 47, 0.7);
+    border: 1px solid var(--c-lightest-navy);
+    color: var(--c-lightest-slate);
+    transition: all 0.3s ease;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.futuristic-input:focus {
+    outline: none;
+    border-color: var(--c-chocolate);
+    box-shadow: 0 0 10px rgba(217, 119, 6, 0.5);
+}
+
+::-webkit-scrollbar { 
+    width: 8px; 
+}
+::-webkit-scrollbar-track { 
+    background: var(--c-navy); 
+}
+::-webkit-scrollbar-thumb { 
+    background: var(--c-lightest-navy); 
+    border-radius: 4px; 
+}
+::-webkit-scrollbar-thumb:hover { 
+    background: var(--c-slate); 
+}
