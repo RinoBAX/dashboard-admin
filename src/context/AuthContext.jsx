@@ -1,7 +1,8 @@
-import React, { useState, useEffect, createContext, useContext, useMemo } from 'react';
+import React, { useState, useEffect, createContext, useMemo } from 'react';
 import { api } from '../api';
 
-const AuthContext = createContext(null);
+
+export const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(null);
@@ -10,7 +11,6 @@ export const AuthProvider = ({ children }) => {
         try {
             const storedToken = localStorage.getItem('authToken');
             const storedUser = localStorage.getItem('authUser');
-
             if (storedToken && storedUser) {
                 setToken(storedToken);
                 setUser(JSON.parse(storedUser));
@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
         } finally {
             setLoading(false);
         }
-    }, []); 
+    }, []);
     const login = async (email, password) => {
         const data = await api.login(email, password);
         setUser(data.user);
@@ -39,11 +39,10 @@ export const AuthProvider = ({ children }) => {
     const authContextValue = useMemo(() => ({
         user,
         token,
-        isAuthenticated: !!token, 
+        isAuthenticated: !!token,
         login,
         logout,
-    }), [user, token]); 
-
+    }), [user, token]);
     if (loading) {
         return (
             <div className="min-h-screen bg-c-navy flex items-center justify-center text-c-chocolate text-xl tracking-widest">
@@ -56,7 +55,4 @@ export const AuthProvider = ({ children }) => {
             {children}
         </AuthContext.Provider>
     );
-};
-export const useAuth = () => {
-    return useContext(AuthContext);
 };

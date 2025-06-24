@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import FuturisticParticleBackground from './FuturisticParticleBackground';
 import MessageModal from '../common/MessageModal';
+
+// Import semua komponen halaman
 import DashboardPage from '../../pages/DashboardPage';
 import ProjectsPage from '../../pages/ProjectsPage';
 import UsersPage from '../../pages/UsersPage';
@@ -35,7 +37,6 @@ const AdminLayout = () => {
                 return <DashboardPage {...props} />;
         }
     };
-
     return (
         <div className="flex h-screen bg-c-navy font-sans text-c-slate">
             {message && <MessageModal message={message} onClose={() => setMessage(null)} />}

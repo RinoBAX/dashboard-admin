@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../hooks/useAuth';
 
 const HomeIcon = () => <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>;
 const ProjectIcon = () => <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>;
@@ -19,7 +19,6 @@ const Sidebar = ({ page, setPage }) => {
         { name: 'Submissions', icon: <SubmissionIcon />, page: 'submissions', roles: ['ADMIN', 'SUPER_ADMIN'] },
         { name: 'Withdrawals', icon: <WithdrawIcon />, page: 'withdrawals', roles: ['SUPER_ADMIN'] }, // Hanya untuk Super Admin
     ];
-
     return (
         <aside className="w-64 flex flex-col bg-c-navy/80 backdrop-blur-sm border-r border-c-lightest-navy/20 z-20">
             <div className="h-20 flex items-center justify-center border-b border-c-lightest-navy/20">

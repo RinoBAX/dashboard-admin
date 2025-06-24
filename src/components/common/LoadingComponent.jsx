@@ -22,7 +22,6 @@ const LoadingSpinnerIcon = () => (
     ></path>
   </svg>
 );
-
 const LoadingComponent = ({ text = "LOADING DATA" }) => {
   return (
     <div 

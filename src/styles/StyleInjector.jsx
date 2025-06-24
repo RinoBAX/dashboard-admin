@@ -1,11 +1,5 @@
 import React from 'react';
 
-/**
- * Komponen yang berfungsi untuk menyuntikkan (inject) style CSS global
- * dan variabel tema ke dalam aplikasi.
- * Ini memastikan bahwa semua komponen memiliki akses ke skema warna
- * dan gaya dasar yang sama.
- */
 const StyleInjector = () => {
   return (
     <style>

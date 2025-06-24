@@ -10,8 +10,7 @@ const UploadIcon = () => <svg xmlns="http://www.w3.org/2000/svg" className="h-6 
 const ProjectFormModal = ({ onClose, onProjectCreated, showMessage }) => {
     const [name, setName] = useState('');
     const [value, setValue] = useState('');
-    const [photo, setPhoto] = useState(null); 
-
+    const [photo, setPhoto] = useState(null);
     const [fields, setFields] = useState([{ label: '', fieldType: 'TEXT', options: '' }]);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const addField = () => {
@@ -39,7 +38,7 @@ const ProjectFormModal = ({ onClose, onProjectCreated, showMessage }) => {
             const projectData = { 
                 name, 
                 value: Number(value), 
-                photo: imageUrl, 
+                photo: imageUrl,
                 fields: fields.map(f => ({
                     ...f, 
                     options: f.fieldType === 'RADIO' ? f.options.split(',').map(opt => opt.trim()) : undefined 
@@ -53,7 +52,6 @@ const ProjectFormModal = ({ onClose, onProjectCreated, showMessage }) => {
             setIsSubmitting(false);
         }
     };
-    
     return (
         <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4">
             <div className="glassmorphism rounded-xl shadow-2xl p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto border border-c-chocolate/50">
@@ -66,7 +64,6 @@ const ProjectFormModal = ({ onClose, onProjectCreated, showMessage }) => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <input type="text" placeholder="Project Name" value={name} onChange={e => setName(e.target.value)} className="futuristic-input w-full" required />
                     <input type="number" placeholder="Value (Rp)" value={value} onChange={e => setValue(e.target.value)} className="futuristic-input w-full" required />
-                    
                     <div>
                         <label className="text-sm font-semibold text-c-slate mb-2 block">Project Photo (Optional)</label>
                         <label htmlFor="photo-upload" className="futuristic-input w-full flex items-center justify-center gap-3 cursor-pointer hover:border-c-chocolate transition-colors">
@@ -77,7 +74,6 @@ const ProjectFormModal = ({ onClose, onProjectCreated, showMessage }) => {
                     </div>
 
                     <hr className="my-4 border-c-lightest-navy/20" />
-                    
                     <h3 className="text-lg font-semibold text-c-light-slate">Data Fields</h3>
                     <div className="space-y-3">
                         {fields.map((field, index) => (
@@ -103,7 +99,6 @@ const ProjectFormModal = ({ onClose, onProjectCreated, showMessage }) => {
                     <button type="button" onClick={addField} className="text-sm text-c-chocolate hover:underline font-semibold">
                         + Add Field
                     </button>
-                    
                     <div className="flex justify-end space-x-4 pt-4">
                         <button type="button" onClick={onClose} className="text-c-slate hover:text-white px-4 py-2 rounded-lg">Cancel</button>
                         <button type="submit" className="futuristic-btn" disabled={isSubmitting}>
@@ -115,5 +110,4 @@ const ProjectFormModal = ({ onClose, onProjectCreated, showMessage }) => {
         </div>
     );
 };
-
 export default ProjectFormModal;
